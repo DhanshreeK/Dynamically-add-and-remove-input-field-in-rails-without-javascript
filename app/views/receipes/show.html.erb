@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @receipe.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @receipe.description %>
+</p>
+
+<p>
+  <strong>Ingredients:</strong>
+  <% @receipe.ingredients.each do |i|%>
+  	<%= i.name%><br>
+  	<%end%>
+</p>
+
+
+<%= link_to 'Edit', edit_receipe_path(@receipe) %> |
+<%= link_to 'Back', receipes_path %>

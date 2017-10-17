@@ -1,0 +1,21 @@
+<table class="table table-striped">
+  <tr>
+      <th>Item Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+<% @product.items.each do |item| %>
+  <tr>
+   <td> <%= item.item_name %> </td>
+    <td> <%= item.price%> </td>
+    <td><%= item.quantity%></td>
+    <td> <%= link_to 'Destroy Item', [item.product, item],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %></td>
+<% end %>
+</tr>
+</tbody>
+</table>
